@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
+/*    override func viewDidLoad() {
         super.viewDidLoad()
         
         let firstFrame = CGRect(x:160, y:240, width:100, height:150)// create Frame for a UIView
@@ -25,7 +25,7 @@ class ViewController: UIViewController {
         firstView.addSubview(secondView)
         
     }
-
+*/
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
