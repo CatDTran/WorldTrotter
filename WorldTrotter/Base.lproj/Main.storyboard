@@ -55,6 +55,7 @@
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="lcs-N2-M9c" firstAttribute="top" secondItem="MWI-IP-X9j" secondAttribute="bottom" constant="8" id="9YO-am-Vmz"/>
                             <constraint firstItem="lcs-N2-M9c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9ju-Mt-2d5"/>
@@ -68,13 +69,22 @@
                             <constraint firstItem="EiU-VC-2zk" firstAttribute="centerX" secondItem="Hm0-7j-Xfi" secondAttribute="centerX" id="ppM-2s-yKf"/>
                             <constraint firstItem="Hm0-7j-Xfi" firstAttribute="top" secondItem="EiU-VC-2zk" secondAttribute="bottom" constant="8" id="sTZ-h8-Bbl"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="T3M-pl-eGK" appends="YES" id="SPY-z9-MGJ"/>
+                        </connections>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="MWI-IP-X9j" id="BKJ-2u-wlI"/>
+                        <outlet property="textField" destination="EiU-VC-2zk" id="j32-8w-wiR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T3M-pl-eGK">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="BYZ-38-t0r" id="KhO-Bc-HuO"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="192.5" y="103.5"/>
         </scene>
