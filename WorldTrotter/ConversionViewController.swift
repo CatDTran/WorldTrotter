@@ -8,7 +8,9 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController{
+//protocols that a class conforms with are in a comma-delimited list follow after the superclass (if any)
+//in class's decleration
+class ConversionViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet var celsiusLabel: UILabel!
     @IBOutlet var textField: UITextField!
@@ -18,6 +20,16 @@ class ConversionViewController: UIViewController{
         }
     }
     
+    //restrict maximum and minimum fractions digits
+    let numberFormatter: NSNumberFormatter = {
+        let nf = NSNumberFormatter()
+        nf.numberStyle = .DecimalStyle
+        nf.minimumFractionDigits = 0
+        nf.maximumFractionDigits = 1
+        return nf
+    }()
+    
+    //convert fahrenheit to celsius value here
     var celsiusValue: Double?{
         if let value = fahrenheitValue{//check if there is fahrenheitValue, if there is, convert to celsius
             return (value - 32) * (5/9)
@@ -27,15 +39,18 @@ class ConversionViewController: UIViewController{
         }
     }
     
+    //update the celsius label
     func updateCelsiusLabel(){
         if let value = celsiusValue{
-            celsiusLabel.text = "\(value)"
+            //celsiusLabel.text = "\(value)"
+            celsiusLabel.text = numberFormatter.stringFromNumber(value)//set text using NSNumberFormatter
         }
         else{
             celsiusLabel.text = "???"
         }
     }
     
+    //called whenever farenheit TextField is changed
     @IBAction func fahrenheitFeildEditingChanged(textField: UITextField){
         //celsiusLabel.text = textField.text
         //if display ??? if celsiusLabel.text is empty
@@ -47,7 +62,24 @@ class ConversionViewController: UIViewController{
         }
     }
     
+    //called to dismiss keyboard on screen
     @IBAction func dismissKeyboard(sender: AnyObject){
         textField.resignFirstResponder()
+    }
+    
+    //implementing the protocol
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool{
+        //print("Current text: \(textField.text)")
+        //print("Replacement text: \(string)")
+        //return true
+        let existingTextHasDecimalSeparator = textField.text?.rangeOfString(".")
+        let replacementTextHasDecimalSeparator = string.rangeOfString(".")
+        
+        if existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil{
+            return false
+        }
+        else{
+            return true
+        }
     }
 }
