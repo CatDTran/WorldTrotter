@@ -21,7 +21,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
     }
     
     //restrict maximum and minimum fractions digits
-    let numberFormatter: NSNumberFormatter = {
+    let numberFormatter: NSNumberFormatter = {  //using Swift's closure to instantiate an NSNumberFormatter
         let nf = NSNumberFormatter()
         nf.numberStyle = .DecimalStyle
         nf.minimumFractionDigits = 0
