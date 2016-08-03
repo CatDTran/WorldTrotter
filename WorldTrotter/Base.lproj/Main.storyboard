@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Convert-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ConversionViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,7 +74,7 @@
                             <outletCollection property="gestureRecognizers" destination="T3M-pl-eGK" appends="YES" id="SPY-z9-MGJ"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="c8U-Ix-eLb"/>
+                    <tabBarItem key="tabBarItem" title="Convert" image="ConvertIcon" id="c8U-Ix-eLb"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="celsiusLabel" destination="MWI-IP-X9j" id="BKJ-2u-wlI"/>
@@ -90,7 +90,7 @@
             </objects>
             <point key="canvasLocation" x="1268" y="473"/>
         </scene>
-        <!--Item-->
+        <!--Map-->
         <scene sceneID="aBJ-rb-44I">
             <objects>
                 <viewController id="arG-AZ-UPy" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     </mapView>
-                    <tabBarItem key="tabBarItem" title="Item" id="Zwx-ui-eyc"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="Zwx-ui-eyc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="72o-a8-fiY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,13 +114,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="arG-AZ-UPy" kind="relationship" relationship="viewControllers" id="630-hS-jfC"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="kGi-MO-Fh9"/>
+                        <segue destination="arG-AZ-UPy" kind="relationship" relationship="viewControllers" id="630-hS-jfC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="usV-XL-Oe1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="700" y="111"/>
+            <point key="canvasLocation" x="548" y="129"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ConvertIcon" width="49" height="33"/>
+        <image name="MapIcon" width="49" height="33"/>
+    </resources>
 </document>
