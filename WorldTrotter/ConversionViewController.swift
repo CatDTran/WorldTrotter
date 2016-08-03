@@ -20,6 +20,11 @@ class ConversionViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad() //always call super's method when override
+        print("Conversion View Controller loaded its view")
+    }
+    
     //restrict maximum and minimum fractions digits
     let numberFormatter: NSNumberFormatter = {  //using Swift's closure to instantiate an NSNumberFormatter
         let nf = NSNumberFormatter()
