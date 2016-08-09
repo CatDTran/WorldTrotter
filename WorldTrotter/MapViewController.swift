@@ -18,7 +18,7 @@ class MapViewController: UIViewController{
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satelite"])    //create segment controll with 3 options
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)    //set background color and transparency
         segmentedControl.selectedSegmentIndex = 0   //initial selected option
-        segmentedControl.addTarget(self, action: "mapTypeChanged:", forControlEvents: .ValueChanged)
+        segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(_:)), forControlEvents: .ValueChanged)
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false  //turn this off because we are using Auto Layout
         view.addSubview(segmentedControl)
         
