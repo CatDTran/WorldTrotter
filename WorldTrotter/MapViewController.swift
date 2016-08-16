@@ -18,10 +18,8 @@ class MapViewController: UIViewController{
         let segmentedControl = UISegmentedControl(items: ["Standard", "Hybrid", "Satelite"])    //create segment controll with 3 options
         segmentedControl.backgroundColor = UIColor.whiteColor().colorWithAlphaComponent(0.5)    //set background color and transparency
         segmentedControl.selectedSegmentIndex = 0   //initial selected option
-<<<<<<< HEAD
         segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(_:)), forControlEvents: .ValueChanged)
-=======
->>>>>>> parent of d66ec96... Enable selecting different map types programmatically for the Segmented Control
+
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false  //turn this off because we are using Auto Layout
         view.addSubview(segmentedControl)
         
@@ -39,5 +37,18 @@ class MapViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Map View Controller loaded its view...")
+    }
+    
+    func mapTypeChanged(segControl: UISegmentedControl){
+        switch segControl.selectedSegmentIndex {
+        case 0:
+            mapView.mapType = .Standard
+        case 1:
+            mapView.mapType = .Hybrid
+        case 2:
+            mapView.mapType = .Satellite
+        default:
+            break
+        }
     }
 }
